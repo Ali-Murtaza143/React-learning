@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+//function
+      function printName(name) {
+      console.log(name);
+    }
+      printName("Ali");
+
+//arrow function
+const printName1=(name) =>{
+    console.log(name);
+    }
+      printName1("Ali");
+const dec=(num)=>{
+return num-1
+};
+console.log(dec(31));
+
+// short-hand arrow function
+add = (num) => num + 2;
+console.log(add(2));
+
+
+// INHERTITANCE
+      class genderOfPerson {
+        gender = "male";
+        printmyGender = () => {
+          console.log(this.gender);
+        };
+      }
+
+
+      class Person extends genderOfPerson {
+        name = "Ali Murtaza";
+        printmyName = () => {
+          console.log(this.name);
+        };
+      }
+
+
+      const person = new Person();
+      person.printmyName();
+      person.printmyGender();
+
+
+
+
+    // Array
+      const numbers = [5,10, 22, 23];
+      const newNum = [...numbers, 4, 5];
+      console.log(newNum);
+
+      // Object
+      const fName = {
+        name: "ali",
+      };
+      const newPerson = {
+        ...fName,
+        age: 23,
+      };
+      console.log(newPerson);
+
+function sortArgs(...args) {
+        return args.sort();
+      }
+console.log(sortArgs("Dog","Bird" ,"Banana", "Cat", "Apple")); //['Apple', 'Banana', 'Cat', 'Dog']
+
+
+
+//Spread Operator: used in variable array where there is more than 1 values expected 
+// syntax same as Rest param but function is  totally opposite 
+
+// apply()
+function sum(a,b,c){
+    console.log(a+b+c);
+   }
+
+   var arrVal = [1,2,3];
+   sum.apply(null,arrVal)
+
+//   Replace apply()
+    let sum1= (a,b,c) => console.log(a+b+c);
+
+    var arrVal = [1,2,3];
+    sum1(...arrVal)
+
+// concat()
+    let arr1=[1,2,3];
+    let arr2=[4,5,6];
+    let arr3=[7,8,9];
+
+    arr1 = arr1.concat(arr2).concat(arr3);
+
+    console.log(arr1)
+
+  // Replace concat()
+    let arr4=[1,2,3];
+    let arr5=[4,5,6];
+    let arr6=[7,8,9];
+
+    arr4 = [...arr4,...arr5,...arr6]
+    console.log(arr4)
+
+// Replace copy()
+    let arr7=[1,2,3];
+    let arr8=[4,5,6];
+
+    
+    let arr9=[...arr7, 7,8,10,...arr8]
+    console.log(arr9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
