@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+// callback hell
+// Scenario 
+
+// 1. Register 
+
+// 2. send welcome email 
+
+// 3. login
+
+// 4. get user data 
+
+// 5. display user data
+
+// function Register(){
+// console.log("register end")
+
+// };
+
+// function sendEmail(){
+// console.log("Email end")
+// };
+
+// function login(){
+//     console.log("Login end")
+
+// };
+
+// function getUserData()
+// {
+//     console.log("got user data")
+
+// };
+
+// function displayUserDara()
+// {
+//     console.log("dipalyed user data")
+
+// };
+
+// Register();
+// sendEmail();
+// login();
+// getUserData();
+// displayUserDara();
+
+// console.log("other application work!");
+
+// if we run the above it will compile and give output line by line (syncounus)
+// if we use any other function (timer) which used to delay some seconds then 
+// it blocked other functions onces first completed/ execute (the last other app work will display at last when all executed and it blocked)
+// for this  we use asynchronous js( callback function is used)
+
+
+// make above asynchronous JS on it
+// the goal is, it execute the functions one by one 
+// onces a function doesnot end, it doesnot call another.  
+
+// // callback only in register function
+// function Register(callback){
+// setTimeout(() => {
+//     console.log("register end")
+//     callback()
+// }, 1000);
+
+
+
+// };
+
+// function sendEmail(){
+//     setTimeout(() => {
+//         console.log("Email end")
+// }, 5000);
+
+
+
+// };
+
+// function login(){
+//     setTimeout(() => {
+//         console.log("Login End")
+// }, 3000);
+
+// };
+
+// function getUserData()
+// {
+//     setTimeout(() => {
+//         console.log("got user data")
+// }, 1000);
+
+   
+
+// };
+
+// function displayUserDara()
+// {
+//     setTimeout(() => {
+//         console.log("displayed user data")
+// }, 1000);
+
+// };
+
+// // here the function () , is callback function inside the register().
+
+
+ 
+// Register(function (){
+// sendEmail();
+// login();
+// getUserData();
+// displayUserDara();
+    
+// });
+
+
+// console.log("other application work!");
+
+
+// output 
+// other application work!
+// register end
+// got user data
+// Login End
+// Email end
+// as dealy (timer) changes, the seqence of execuation changes.
+
+// so for this thing we apply callback on all functions 
+
+
+
+
+// callback only in register function
+function Register(callback){
+setTimeout(() => {
+    console.log("register end")
+    callback()
+}, 1000);
+
+
+
+};
+
+function sendEmail(callback){
+    setTimeout(() => {
+        console.log("Email end")
+        callback();
+    }, 1000);
+
+
+
+};
+
+function login(callback){
+    setTimeout(() => {
+        console.log("Login End")
+        callback();
+    }, 3000);
+
+};
+
+function getUserData(callback)
+{
+    setTimeout(() => {
+        console.log("got user data")
+        callback();
+}, 1000);
+   
+};
+
+
+function displayUserData()
+{
+    setTimeout(() => {
+        console.log("displayed user data")
+}, 5000);
+
+};
+
+// here the nesting of the functions.
+ // this is called as callback hell
+
+Register(function (){
+sendEmail(function (){
+login(function (){
+getUserData(function (){
+displayUserData();
+
+});
+
+});
+
+});
+
+
+});
+
+
+console.log("other application work!");
+
+
+// what ever the timer (delay) is, it doesnot effect on sequence of execution 
+//output
+// other application work!
+// register End
+// Email end
+// Login End
+// got user data
+// displayed user data
+
+
+</script>
+</body>
+</html>

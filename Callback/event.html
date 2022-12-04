@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events In JS</title>
+    <style>
+        #btn{
+          padding:10px,14px;
+          color: blue;
+          background-color: aqua;
+          border: 2px solid blue;
+          border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading"">This is Heading</h1>
+<button id="btn">Click me</button>
+
+    <script>
+//     click count by using global varaible
+// let count=0;
+// document.getElementById("btn").addEventListener("click",function abc(){
+// console.log("this button clicked", ++count );
+
+// })
+      
+
+
+//     click count by using without global varaible (closures along with event listener)
+
+function attachEventListener(){
+    let count=0;
+document.getElementById("btn").addEventListener("click",function abc(){
+console.log("this button clicked", ++count );
+
+});
+
+}
+attachEventListener();
+
+      
+
+
+    </script>
+</body>
+</html>
